@@ -263,3 +263,55 @@ order of n = 2 so it is O(n^2) = O(n^2)
       return nested(nested(n + 11));
   }
   ```
+
+## 4 Arrays
+
+- Arrays are vector
+- Statcic array: Its size is static
+- Dynamic array: Its size is dynamic
+- In c lang array size has to be decided at compile time.
+- Arrays will be created in stack memory
+- If we want to create array on heap memory we use malloc func for c lang , new operator for cpp lang
+- Size of array which is in stack cannot be resize. But if it is in heap memory its size can be resize
+- 2D dimensional arrays: Element can be stored Row major mapping or Column major mapping
+- Arrays in compilers:
+
+  - int A[3][4]; // A[m][n]
+
+  - | X   | 0   | 1   | 2   | 3   |
+    | --- | --- | --- | --- | --- |
+    | 0   | a00 | a01 | a02 | a03 |
+    | 1   | a10 | a11 | a12 | a13 |
+    | 2   | a20 | a21 | a22 | a23 |
+
+  > Row major mapping
+
+  - | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  |
+    | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+    | a00 | a01 | a02 | a03 | a10 | a11 | a12 | a13 | a20 | a21 | a22 | a23 |
+    | 200 | 202 | 204 | 206 | 208 | 210 | 212 | 214 | 216 | 218 | 220 | 222 |
+
+  - Address of a00 = 200 and it is base address.So L0 = 200
+
+  - Example for obtaining address of a12 = Add(A[1][2]) = 200 + (1x4+2)\*2 = 212
+  - Example for obtaining address of a12 = Add(A[2][3]) = 200 + (2x4+3)\*2 = 222
+  - Formula for obtaining address of any element = Add(A[i][j]) = L0 + (i x n + j)\*w
+  - L0 = base address(starting address) of array ,w = size of data type
+
+  > Column major mapping
+
+  - | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  |
+    | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+    | a00 | a10 | a20 | a01 | a11 | a21 | a02 | a12 | a22 | a03 | a13 | a23 |
+    | 200 | 202 | 204 | 206 | 208 | 210 | 212 | 214 | 216 | 218 | 220 | 222 |
+
+  - Address of a00 = 200 and it is base address.So L0 = 200
+
+  - Example for obtaining address of a12 = Add(A[1][2]) = 200 + (2x3+1)\*2 = 214
+  - Example for obtaining address of a12 = Add(A[1][3]) = 200 + (3x3+1)\*2 = 220
+  - Formula for obtaining address of any element = Add(A[i][j]) = L0 + (j x m + i)\*w
+  - L0 = base address(starting address) of array ,w = size of data type
+
+  ### Array ADT
+
+-
