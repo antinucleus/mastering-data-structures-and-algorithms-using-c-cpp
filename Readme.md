@@ -314,4 +314,9 @@ order of n = 2 so it is O(n^2) = O(n^2)
 
   ### Array ADT
 
--
+- # Binary Search
+
+- Array must be sorted initially
+- Define low (l) high (h) and mid(m) values
+- Mid = (l+h)/2
+- n is the number of elements then the Time Complexity = $log{_2}{n}$
