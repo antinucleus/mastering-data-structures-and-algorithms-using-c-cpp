@@ -1,4 +1,4 @@
-g++ -std="c++20"  -o $1 $2 $3 $4 $5
+clang -o $1 $2 $3 $4 $5
 
 compiled=false
 
